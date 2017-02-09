@@ -41,3 +41,9 @@ Then exit and save the file with the key commands Ctrl-x, Y, enter.
 ```
 sudo apt-get --only-upgrade install <packagename>
 ```
+
+
+## Extract Debian Packages 
+```
+sudo dpkg -x package.deb /tmp/out
+```

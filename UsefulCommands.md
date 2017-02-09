@@ -35,3 +35,9 @@ In this case, we’re granting root privileges to the user username. Add the fol
 username ALL=(ALL:ALL) ALL
 ```
 Then exit and save the file with the key commands Ctrl-x, Y, enter.
+
+
+## Update a single package in Ubuntu 
+```
+sudo apt-get --only-upgrade install <packagename>
+```

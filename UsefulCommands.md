@@ -1,3 +1,9 @@
+## Redirect output(stdout and stderr) to a file
+```
+$ command >> filename 2>&1
+```
+
+
 ## How to find all files containing specific text on Linux?
 ```
 grep -rnw '/path/to/somewhere/' -e "pattern"

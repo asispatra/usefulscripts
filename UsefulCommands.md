@@ -1,3 +1,9 @@
+## git commands
+```
+# Apply patch
+git apply file.patch
+```
+
 ## Extract a pattern from a text
 ```
 matched_text=$(echo $single_line_text | sed 's/.*xyz=\([^ ][^ ]*\).*/\1/')

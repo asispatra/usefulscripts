@@ -1,3 +1,15 @@
+## tar commands
+```
+tar -cvf filename.tar directory         # Create a .tar file
+tar -cvzf filename.tar.gz directory     # Create a .tar.gz file
+tar -cvfj filename.tar.bz2 directory    # Create a .tar.bz2 file
+tar -xvf filename.tar                   # Untar a .tar file
+tar -xvzf filename.tar.gz               # Uncompress a .tar.gz file 
+tar -xvfj filename.tar.bz2              # Uncompress a .tar.bz2 file
+
+# Note: Use -C option to extract files to a specific directory
+```
+
 ## Redirect output(stdout and stderr) to a file
 ```
 $ command >> filename 2>&1

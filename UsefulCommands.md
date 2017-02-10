@@ -1,3 +1,10 @@
+## Array or dictonary in bash
+```
+declare -A arr
+arr[$key]=$val
+val=${arr[$key]}
+```
+
 ## tar commands
 ```
 tar -cvf filename.tar directory         # Create a .tar file

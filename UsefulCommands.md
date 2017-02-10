@@ -1,3 +1,9 @@
+## Replace matched pattern of a file
+```
+sed -i ':a;N;$!ba;s/Hello\/World\/hello.c:11[^\n]*\n//g' logfile    # This remove new line too
+sed -i 's,text,'$text',g' file
+```
+
 ## git commands
 ```
 # Apply patch

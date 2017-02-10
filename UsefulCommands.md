@@ -1,3 +1,14 @@
+## A command success or not
+```
+if echo $line | grep "xyz" > /dev/null ; then
+	echo "xyz present"
+elif echo $line | grep "XYZ" > /dev/null ; then
+	echo "XYZ present"
+else
+	echo "not present"
+fi
+```
+
 ## Array or dictonary in bash
 ```
 declare -A arr

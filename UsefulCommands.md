@@ -65,3 +65,12 @@ sudo apt-get --only-upgrade install <packagename>
 ```
 sudo dpkg -x package.deb /tmp/out
 ```
+
+
+## Execute script in a remote system
+```
+sshpass -p $PASS ssh -o StrictHostKeyChecking=no $USER@$HOST "mkdir -p ~/tmp_$dir"
+sshpass -p $PASS scp -r $dir/* $USER@$HOST:~/tmp_$dir
+sshpass -p $PASS ssh -f $USER@$HOST "cd ~/tmp_$dir ; screen -dm -S label_$(date +%d%b%Y_%H%M%S) ./startBatch.sh"
+# sshpass -p $PASS ssh -f $USER@$HOST "cd ~/tmp_$dir ; nohup ./startBatch.sh &"
+```

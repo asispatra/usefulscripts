@@ -1,3 +1,8 @@
+## Timestamp
+```
+ext=$(date +%d%b%Y_%H%M%S)
+```
+
 ## A command success or not
 ```
 if echo $line | grep "xyz" > /dev/null ; then

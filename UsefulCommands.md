@@ -1,3 +1,10 @@
+## Extract a pattern from a text
+```
+matched_text=$(echo $single_line_text | sed 's/.*xyz=\([^ ][^ ]*\).*/\1/')
+
+# Note: Need to change the pattern accordingly
+```
+
 ## Timestamp
 ```
 ext=$(date +%d%b%Y_%H%M%S)

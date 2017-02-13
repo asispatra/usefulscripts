@@ -1,3 +1,19 @@
+## Install JDK 8 on Ubuntu
+
+#### Ubuntu Trusty (14.04 LTS). 
+OpenJDK 8 is not available on Trusty. To install Oracle JDK 8:
+```
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+```
+#### Ubuntu Wily (15.10) and above. 
+To install OpenJDK 8:
+```
+sudo apt-get install openjdk-8-jdk
+```
+
 ## Replace matched pattern of a file
 ```
 sed -i ':a;N;$!ba;s/Hello\/World\/hello.c:11[^\n]*\n//g' logfile    # This remove new line too

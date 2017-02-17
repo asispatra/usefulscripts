@@ -1,7 +1,13 @@
+## Send command in background in for loop
+```
+for d in train/* ; do find $d -name "*.jpg" | xargs -I {} file {} >> train_info.txt & done
+# Note: there is no ';' before done
+```
+
 ## find command
 ```
 find train -name "*.jpg" | xargs -I {} file {} >> train_info.txt
-for d in train/* ; do find $d -name "*.jpg" | xargs -I {} file {} >> train_info.txt &  done
+for d in train/* ; do find $d -name "*.jpg" | xargs -I {} file {} >> train_info.txt & done
 ```
 
 ## Calculate average

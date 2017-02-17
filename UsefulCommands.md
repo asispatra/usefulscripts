@@ -1,3 +1,8 @@
+## Calculate average
+```
+lines=$(data_filter_to_a_single_column) ; avg=0; n=0; for l in $(echo "$lines") ; do avg=$(echo "scale=12; ($avg  * $n + $l)/($n + 1)" | bc) ; n=$(expr $n + 1) ; done; echo $avg
+```
+
 ## Install JDK 8 on Ubuntu
 
 #### Ubuntu Trusty (14.04 LTS). 

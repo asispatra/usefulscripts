@@ -1,3 +1,9 @@
+## find command
+```
+find train -name "*.jpg" | xargs -I {} file {} >> train_info.txt
+for d in train/* ; do find $d -name "*.jpg" | xargs -I {} file {} >> train_info.txt &  done
+```
+
 ## Calculate average
 ```
 lines=$(data_filter_to_a_single_column) ; avg=0; n=0; for l in $(echo "$lines") ; do avg=$(echo "scale=12; ($avg  * $n + $l)/($n + 1)" | bc) ; n=$(expr $n + 1) ; done; echo $avg

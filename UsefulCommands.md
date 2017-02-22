@@ -1,3 +1,10 @@
+## Create softlink
+```
+# Create a softlink python of python3
+ln -s python3 python -f
+# -f option to force
+```
+
 ## Send command in background in for loop
 ```
 for d in train/* ; do find $d -name "*.jpg" | xargs -I {} file {} >> train_info.txt & done

@@ -48,6 +48,11 @@ sed -i 's,text,'$text',g' file
 ```
 # Apply patch
 git apply file.patch
+
+# cherry-pick
+git remote add ibmsoe https://github.com/abc/xyz 
+git fetch pqr 
+git cherry-pick b46130b922d47ff20ac40ebbdef01f7771e1d0bc
 ```
 
 ## Extract a pattern from a text

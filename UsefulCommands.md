@@ -46,6 +46,17 @@ sed -i 's,text,'$text',g' file
 
 ## git commands
 ```
+# git clone a particular branch
+git clone -b branch-name https://github.com/abc/xyz.git
+
+git clone https://github.com/abc/xyz.git
+cd xyz
+git checkout branch-name/b46130b922d47ff20ac40ebbdef01f7771e1d0bc
+
+# code change
+git add inception/inception/inception_train.py
+git commit
+
 # Apply patch
 git apply file.patch
 

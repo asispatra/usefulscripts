@@ -1,3 +1,12 @@
+## CPU enable/disable
+```
+# Enable
+for x in {2..4} ; do  echo 1 > /sys/devices/system/cpu/cpu${x}/online ; done
+
+# Disable
+for x in {2..4} ; do  echo 0 > /sys/devices/system/cpu/cpu${x}/online ; done
+```
+
 ## perf command
 Use root or sudo to take cpu profile 
 ```

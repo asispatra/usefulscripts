@@ -1,3 +1,14 @@
+## perf command
+Use root or sudo to take cpu profile 
+```
+# Start profile
+perf record -a <command>
+perf record -a -p <pid>
+
+# profile result
+perf report -i perf.data
+```
+
 ## Create softlink
 ```
 # Create a softlink python of python3

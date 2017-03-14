@@ -123,7 +123,7 @@ tar -cvzf filename.tar.gz directory     # Create a .tar.gz file
 tar -cvjSf filename.tar.bz2 directory    # Create a .tar.bz2 file
 tar -xvf filename.tar                   # Untar a .tar file
 tar -xvzf filename.tar.gz               # Uncompress a .tar.gz file 
-tar -xvfj filename.tar.bz2              # Uncompress a .tar.bz2 file
+tar -xvjf filename.tar.bz2              # Uncompress a .tar.bz2 file
 
 # Note: Use -C option to extract files to a specific directory
 ```

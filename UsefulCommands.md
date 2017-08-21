@@ -192,3 +192,9 @@ sshpass -p $PASS scp -r $dir/* $USER@$HOST:~/tmp_$dir
 sshpass -p $PASS ssh -f $USER@$HOST "cd ~/tmp_$dir ; screen -dm -S label_$(date +%d%b%Y_%H%M%S) ./startBatch.sh"
 # sshpass -p $PASS ssh -f $USER@$HOST "cd ~/tmp_$dir ; nohup ./startBatch.sh &"
 ```
+
+
+## Recursive find/replace of a string
+```
+find <DIR> -type f -print0 | xargs -0 sed -i 's/TEXT1/TEXT2/g'
+```

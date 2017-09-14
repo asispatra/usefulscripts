@@ -1,3 +1,13 @@
+## How to Connect to Cisco AnyConnect VPN in Ubuntu
+http://ubuntuhandbook.org/index.php/2014/11/connect-cisco-anyconnect-vpn-ubuntu/
+```
+# Install OpenConnect:
+sudo apt-get install openconnect
+
+# Connect to VPN, run:
+sudo openconnect yourvpn.example.com
+```
+
 ## CPU enable/disable
 ```
 # Enable

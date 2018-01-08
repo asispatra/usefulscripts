@@ -1,3 +1,13 @@
+## List all installed kernel
+#### RedHat / CentOS / RHEL / Fedora Linux user
+```
+rpm -qa kernel
+```
+#### Debian / Ubuntu Linux user
+```
+dpkg --list | grep linux-image
+```
+
 ## How to Connect to Cisco AnyConnect VPN in Ubuntu
 http://ubuntuhandbook.org/index.php/2014/11/connect-cisco-anyconnect-vpn-ubuntu/
 ```

@@ -2,7 +2,7 @@
 ```
 # You may escape this part
 virtualenv --system-site-packages ~/jupyterlab_venv
-source ~/jupyterlab_env/bin/activate
+source ~/jupyterlab_venv/bin/activate
 ```
 
 ## Installation

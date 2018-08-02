@@ -6,6 +6,11 @@ source ~/jupyterlab_env/bin/activate
 ```
 
 ## Installation
+```
+pip install jupyterlab
+```
+
+#### Installation Details
 http://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html
 
 

@@ -22,3 +22,8 @@ vi ~/.jupyter/jupyter_notebook_config.py
 #c.NotebookApp.ip = 'localhost'            # Change the IP Address for remotely access
 #c.NotebookApp.notebook_dir = u''          # Change the base Directory
 ```
+
+## Start JupyterLab
+```
+jupyter lab
+```

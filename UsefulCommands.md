@@ -7,6 +7,10 @@ seq 6 | paste -sd" "
 ## Text between pattern
 ```
 cat textfile | awk '/PATTERN_START/{flag=1; next} /PATTERN_END/{flag=0} flag'
+
+# Include the pattern matched too
+cat textfile | sed -n '/PATTERN_START/,/PATTERN_END/p'
+cat textfile | awk '/PATTERN_START/,/PATTERN_END/'
 ```
 
 ## List all installed kernel

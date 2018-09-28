@@ -1,3 +1,9 @@
+## Convert column to row
+```
+seq 6 | paste -sd" "
+```
+
+
 ## Text between pattern
 ```
 cat textfile | awk '/PATTERN_START/{flag=1; next} /PATTERN_END/{flag=0} flag'

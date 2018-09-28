@@ -1,3 +1,8 @@
+## Text between pattern
+```
+cat textfile | awk '/PATTERN_START/{flag=1; next} /PATTERN_END/{flag=0} flag'
+```
+
 ## List all installed kernel
 #### RedHat / CentOS / RHEL / Fedora Linux user
 ```

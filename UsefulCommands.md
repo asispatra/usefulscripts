@@ -1,3 +1,9 @@
+## Persistence Mode
+```
+nvidia-smi -pm 0 # Disable
+nvidia-smi -pm 1 # Enable
+```
+
 ## Convert column to row
 ```
 seq 6 | paste -sd" "

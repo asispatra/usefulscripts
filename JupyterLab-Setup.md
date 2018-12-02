@@ -27,3 +27,21 @@ vi ~/.jupyter/jupyter_notebook_config.py
 ```
 jupyter lab
 ```
+
+## Issues
+```
+1 .
+ImportError: No module named altair
+
+pip install altair
+
+2 .
+import altair as alt
+alt.renderers.enable('notebook')
+
+To use the 'notebook' renderer, you must install the vega package and the associated Jupyter extension.
+See https://altair-viz.github.io/getting_started/installation.html for more information.
+
+
+pip install vega
+```

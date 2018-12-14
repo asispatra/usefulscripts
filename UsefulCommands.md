@@ -1,3 +1,8 @@
+## how to combine two variable column-by-column in bash
+```
+paste <(echo "$VAR1") <(echo "$VAR2") --delimiters ' '
+```
+
 ## Persistence Mode
 ```
 nvidia-smi -pm 0 # Disable

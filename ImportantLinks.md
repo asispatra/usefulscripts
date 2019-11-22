@@ -16,3 +16,6 @@ https://bbs.archlinux.org/viewtopic.php?pid=1269574#p1269574
 current_.id().val
 
 current_.id().val
+
+## How to Install and Configure VNC on Ubuntu 16.04
+https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-16-04

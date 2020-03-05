@@ -171,6 +171,8 @@ tar -xvf filename.tar                   # Untar a .tar file
 tar -xvzf filename.tar.gz               # Uncompress a .tar.gz file 
 tar -xvjf filename.tar.bz2              # Uncompress a .tar.bz2 file
 
+tar -xf filename.tar.xz                 # Uncompress a .tar.xz file 
+
 # Note: Use -C option to extract files to a specific directory
 ```
 

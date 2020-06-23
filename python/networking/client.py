@@ -1,33 +1,24 @@
-# Echo client program
+#!/usr/bin/python3           # This is client.py file
+
 import socket
 import sys
 
+CMD=sys.argv[1]
 
-HOST = ''    # The remote host
-PORT = 50007              # The same port as used by the server
+# create a socket object
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-if len(sys.argv)==4:
-  HOST=str(sys.argv[1])
-  PORT=int(sys.argv[2])
-  MSG=str(sys.argv[3])
+# get local machine name
+host = socket.gethostname()
 
-s = None
-for res in socket.getaddrinfo(HOST, PORT, socket.AF_UNSPEC, socket.SOCK_STREAM):
-    af, socktype, proto, canonname, sa = res
-    try:
-        s = socket.socket(af, socktype, proto)
-    except socket.error as msg:
-        s = None
-        continue
-    try:
-        s.connect(sa)
-    except socket.error as msg:
-        s.close()
-        s = None
-        continue
-    break
-if s is None:
-    print 'could not open socket'
-    sys.exit(1)
-s.sendall(MSG)
+port = 9999
+
+# connection to hostname on the port.
+s.connect((host, port))
+
+# Receive no more than 1024 bytes
+s.send(CMD.encode('ascii'))
+msg = s.recv(1024)
+
+print (msg.decode('ascii'))
 s.close()

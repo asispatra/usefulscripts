@@ -1,39 +1,43 @@
-# Echo server program
+#!/usr/bin/python3           # This is server.py file
+import subprocess
+import shlex
 import socket
-import sys
-import os
 
-HOST = None               # Symbolic name meaning all available interfaces
-PORT = 50007              # Arbitrary non-privileged port
-if len(sys.argv)==2:
-  PORT=int(sys.argv[1])
+def run_bash_commands(bash_command_list):
+  first_time=True
+  for bashCommand in bash_command_list:
+    if first_time==True:
+      first_time=False
+      process = subprocess.Popen(shlex.split(bashCommand), stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    else:
+      process = subprocess.Popen(shlex.split(bashCommand), stdin=process.stdout, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+  output, error = process.communicate()
+  return output.decode('utf-8').strip() # + '\n' + error.decode('utf-8').strip()
 
-s = None
-for res in socket.getaddrinfo(HOST, PORT, socket.AF_UNSPEC,
-                              socket.SOCK_STREAM, 0, socket.AI_PASSIVE):
-    af, socktype, proto, canonname, sa = res
-    try:
-        s = socket.socket(af, socktype, proto)
-    except socket.error as msg:
-        s = None
-        continue
-    try:
-        s.bind(sa)
-        s.listen(5)
-    except socket.error as msg:
-        s.close()
-        s = None
-        continue
-    break
-if s is None:
-    print 'could not open socket'
-    sys.exit(1)
-while 1:
-  conn, addr = s.accept()
-  print 'Connected by', addr
-  if not os.fork():
-    s.close()
-    data = conn.recv(1024)
-    print data
-    conn.close()
-    sys.exit(0)
+# create a socket object
+serversocket = socket.socket(
+                socket.AF_INET, socket.SOCK_STREAM)
+serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
+# get local machine name
+host = socket.gethostname()
+
+port = 9999
+
+# bind to the port
+serversocket.bind((host, port))
+
+# queue up to 5 requests
+serversocket.listen(5)
+
+while True:
+   # establish a connection
+   clientsocket,addr = serversocket.accept()
+
+   print("Got a connection from %s" % str(addr))
+   cmd = clientsocket.recv(1024)
+   CMD = cmd.decode('ascii')
+   print(CMD)
+   bashCommands = [ CMD ]
+   clientsocket.send(run_bash_commands(bashCommands).encode('ascii'))
+   clientsocket.close()
